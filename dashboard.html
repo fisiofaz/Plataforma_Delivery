@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Restaurante</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar de navegação -->
+        <aside class="sidebar">
+            <h2>Restaurante XYZ</h2>
+            <ul>
+                <li><a href="#overview">Visão Geral</a></li>
+                <li><a href="#orders">Pedidos</a></li>
+                <li><a href="#menu">Gerenciar Cardápio</a></li>
+                <li><a href="#reports">Relatórios</a></li>
+                <li><a href="#promotions">Promoções & Cupons</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <section id="overview">
+                <h2>Visão Geral</h2>
+                <div class="overview-cards">
+                    <div class="card">
+                        <h3>Pedidos Ativos</h3>
+                        <p></p>
+                    </div>
+                    <div class="card">
+                        <h3>Pedidos Concluídos Hoje</h3>
+                        <p></p>
+                    </div>
+                    <div class="card">
+                        <h3>Total de Vendas (Hoje)</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="orders">
+                <h2>Pedidos Recentes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID do Pedido</th>
+                            <th>Cliente</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button class="update-status">Atualizar Status</button></td>
+                        </tr>
+                        <!-- Mais pedidos -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="menu">
+                <h2>Gerenciar Cardápio</h2>
+                <button class="add-item">Adicionar Item</button>
+                <!-- Lista de itens do cardápio -->
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h3>Pizza Margherita</h3>
+                        <p>R$ 30,00</p>
+                        <button class="edit-item">Editar</button>
+                        <button class="delete-item">Remover</button>
+                    </div>
+                    <!-- Mais itens -->
+                </div>
+            </section>
+
+            <section id="reports">
+                <h2>Relatórios de Vendas</h2>
+                <div class="report-chart">
+                    <!-- Placeholder para o gráfico de vendas -->
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </section>
+
+            <section id="promotions">
+                <h2>Promoções & Cupons</h2>
+                <button class="add-promotion">Adicionar Promoção</button>
+                <div class="promotions-list">
+                    <!-- Lista de promoções -->
+                    <div class="promotion-item">
+                        <h3>10% Off em Pizzas</h3>
+                        <button class="edit-promotion">Editar</button>
+                        <button class="delete-promotion">Remover</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

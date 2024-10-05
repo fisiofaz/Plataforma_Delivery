@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registro Elegante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="form-wrapper">
+            <div id="loginForm" class="form-box active">
+                <h2>Entrar</h2>
+                <form id="login">
+                    <input type="email" id="loginEmail" placeholder="E-mail" required>
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p>Não tem uma conta? <a href="#" id="showRegister">Crie uma</a></p>
+            </div>
+            <div id="registerForm" class="form-box">
+                <h2>Registro</h2>
+                <form id="register">
+                    <input type="text" id="registerName" placeholder="Nome" required>
+                    <input type="email" id="registerEmail" placeholder="E-mail" required>
+                    <input type="password" id="registerPassword" placeholder="Senha" required>
+                    <button type="submit">Registrar</button>
+                </form>
+                <p>Já tem uma conta? <a href="#" id="showLogin">Faça login</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Cardápio - Plataforma de Gestão de Delivery</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h2>Gerenciamento de Cardápio</h2>
+        <button onclick="window.location.href='dashboard.html'" class="nav-button">Voltar ao Dashboard</button>
+
+        <button id="addItemBtn">Adicionar Item</button>
+        
+        <div id="menuList">
+            <!-- A lista de itens do cardápio será gerada aqui -->
+        </div>
+
+        <!-- Modal para Adicionar/Editar Item -->
+        <div id="itemModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="formTitle">Adicionar Item</h3>
+                <form id="menuForm">
+                    <label for="itemName">Nome do Item:</label>
+                    <input type="text" id="itemName" name="itemName" required>
+
+                    <label for="itemDescription">Descrição:</label>
+                    <textarea id="itemDescription" name="itemDescription" required></textarea>
+
+                    <label for="itemPrice">Preço:</label>
+                    <input type="number" id="itemPrice" name="itemPrice" required>
+
+                    <label for="itemImage">Imagem do Item:</label>
+                    <input type="file" id="itemImage" name="itemImage" accept="image/*">
+
+                    <input type="hidden" id="itemId">
+
+                    <button type="submit">Salvar</button>
+                    <button type="button" id="cancelBtn">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+</body>
+</html>

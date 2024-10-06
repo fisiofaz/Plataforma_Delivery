@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard do Restaurante</title>
+    <title>Dashboard - Plataforma de Gestão de Delivery</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <div class="dashboard-container">
+    <main class="dashboard-container">
         <!-- Sidebar de navegação -->
         <aside class="sidebar">
             <h2>Restaurante XYZ</h2>
             <ul>
                 <li><a href="#overview">Visão Geral</a></li>
-                <li><a href="#orders">Pedidos</a></li>
-                <li><a href="#menu">Gerenciar Cardápio</a></li>
+                <li><a href="./orders.html">Pedidos</a></li>
+                <li><a href="./menu.html">Gerenciar Cardápio</a></li>
                 <li><a href="#reports">Relatórios</a></li>
                 <li><a href="#promotions">Promoções & Cupons</a></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="./index.html">Sair</a></li>
             </ul>
         </aside>
 
         <!-- Conteúdo principal -->
-        <main class="main-content">
+        <section class="main-content">
             <section id="overview">
                 <h2>Visão Geral</h2>
                 <div class="overview-cards">
@@ -101,8 +101,8 @@
                     </div>
                 </div>
             </section>
-        </main>
-    </div>
+        </section>            
+    </main>
     <script src="dashboard.js"></script>
 </body>
 </html>

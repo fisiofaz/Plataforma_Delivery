@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="menu-container">
-        <h2>Gerenciamento de Cardápio</h2>
-        <button onclick="window.location.href='dashboard.html'" class="nav-button">Voltar ao Dashboard</button>
+        <h2>Cardápio</h2>
 
-        <button id="addItemBtn">Adicionar Item</button>
-        
+        <!-- Link para a página de Pedidos -->
+        <button onclick="window.location.href='orders.html'" class="nav-button">Ver Carrinho</button>
+       
+
         <div id="menuList">
             <!-- A lista de itens do cardápio será gerada aqui -->
         </div>
@@ -42,6 +43,8 @@
                 </form>
             </div>
         </div>
+    
+        <button onclick="window.location.href='dashboard.html'" class="nav-button">Volar para o Dashboard</button>
     </div>
 
     <script src="menu.js"></script>

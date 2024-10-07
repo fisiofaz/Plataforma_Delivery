@@ -14,7 +14,7 @@ function renderDashboardSummary() {
         summaryItem.innerHTML = `
             <h3>Pedido #${order.id}</h3>
             <p>Total: R$ ${order.total.toFixed(2)}</p>
-            <p>Status: ${order.status}</p>
+            <p>Status: <span> ${order.status} </span></p>
         `;
         summaryContainer.appendChild(summaryItem);
     });

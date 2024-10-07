@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="orders.css">
 </head>
 <body>
-    <div class="orders-container">
-        <h2>Sistema de Pedidos</h2> 
-
-        <div id="ordersList">
-            <!-- A lista de pedidos será gerada aqui dinamicamente -->
+    <header>
+        <h1>Seu Pedido</h1>
+        <div  class="header-right">
+            <button onclick="window.location.href='menu.html'" class="nav-button">Voltar ao Menu</button>
+            <button onclick="window.location.href='dashboard.html'" class="nav-button">Voltar  ao Dashboard</button>
         </div>
+       
 
-        <!-- Botão para ir ao Dashboard -->
-        <button onclick="window.location.href='dashboard.html'" class="nav-button">Ir para o Dashboard</button>
-    </div>
+    </header>
+
+    <section class="orders">
+        <div id="ordersList">
+            <!-- Lista de pedidos renderizada pelo JavaScript -->
+        </div>
+        <button class="nav-button" onclick="submitOrder()">Confirmar Pedido</button>
+    </section>
 
     <script src="orders.js"></script>
 </body>

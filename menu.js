@@ -1,6 +1,6 @@
 let menu = [
-    { id: 1, name: 'Pizza de Calabresa', description: 'Deliciosa pizza com calabresa', price: 30.00 },
-    { id: 2, name: 'Hambúrguer Artesanal', description: 'Hambúrguer com queijo cheddar', price: 25.00 }
+    { id: 1, name: 'Pizza de Calabresa', description: 'Pizza com calabresa e queijo.', price: 30.00 },
+    { id: 2, name: 'Hambúrguer Artesanal', description: 'Hambúrguer com queijo e bacon.', price: 25.00 }
 ];
 
 let cart = [];
@@ -28,7 +28,7 @@ function addToCart(itemId) {
         cart.push(item);
         alert(`${item.name} foi adicionado ao pedido!`);
     }
-    localStorage.setItem('cart', JSON.stringify(cart)); // Armazena o carrinho no localStorage
+    localStorage.setItem('cart', JSON.stringify(cart)); 
 }
 
 window.onload = renderMenu;

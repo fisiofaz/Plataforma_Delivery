@@ -7,45 +7,16 @@
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-    <div class="menu-container">
-        <h2>Cardápio</h2>
-
-        <!-- Link para a página de Pedidos -->
-        <button onclick="window.location.href='orders.html'" class="nav-button">Ver Carrinho</button>
-       
-
-        <div id="menuList">
+    <header>
+        <h1>Cardápio do Restaurante</h1>   
+        <button onclick="window.location.href='dashboard.html'" class="cart-button">Volar para o Dashboard</button>
+        <button onclick="window.location.href='orders.html'" class="cart-button">Ver Carrinho</button>    
+    </header>
+    <main class="menu">              
+        <section id="menuList">
             <!-- A lista de itens do cardápio será gerada aqui -->
-        </div>
-
-        <!-- Modal para Adicionar/Editar Item -->
-        <div id="itemModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3 id="formTitle">Adicionar Item</h3>
-                <form id="menuForm">
-                    <label for="itemName">Nome do Item:</label>
-                    <input type="text" id="itemName" name="itemName" required>
-
-                    <label for="itemDescription">Descrição:</label>
-                    <textarea id="itemDescription" name="itemDescription" required></textarea>
-
-                    <label for="itemPrice">Preço:</label>
-                    <input type="number" id="itemPrice" name="itemPrice" required>
-
-                    <label for="itemImage">Imagem do Item:</label>
-                    <input type="file" id="itemImage" name="itemImage" accept="image/*">
-
-                    <input type="hidden" id="itemId">
-
-                    <button type="submit">Salvar</button>
-                    <button type="button" id="cancelBtn">Cancelar</button>
-                </form>
-            </div>
-        </div>
-    
-        <button onclick="window.location.href='dashboard.html'" class="nav-button">Volar para o Dashboard</button>
-    </div>
+        </section>
+    </main>
 
     <script src="menu.js"></script>
 </body>

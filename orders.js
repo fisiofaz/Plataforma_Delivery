@@ -10,7 +10,7 @@ function renderOrders() {
         return;
     }
 
-    cart.forEach((item, index) => {
+    cart.forEach(item => {
         const orderItem = document.createElement('div');
         orderItem.classList.add('order-item');
         orderItem.innerHTML = `
@@ -39,8 +39,8 @@ function submitOrder() {
     };
 
     orders.push(newOrder);
-    localStorage.setItem('orders', JSON.stringify(orders)); // Armazena os pedidos no localStorage
-    localStorage.removeItem('cart'); // Limpa o carrinho
+    localStorage.setItem('orders', JSON.stringify(orders));
+    localStorage.removeItem('cart'); 
     alert('Pedido enviado com sucesso!');
     renderOrders();
 }

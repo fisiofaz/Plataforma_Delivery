@@ -1,7 +1,7 @@
 /* Melhoria no CSS */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    background: linear-gradient(135deg, #f9f9f9, #9b9191);
 }
 
 .dashboard-container {
@@ -140,4 +140,35 @@ table td {
 
 .nav-button:hover {
     background: linear-gradient(135deg, #5a75e3, #9252c1);
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+    margin: .5rem;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.summary-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.summary-item p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.summary-item p span {
+    font-weight: 600;
+    color: #4912ca;
 }

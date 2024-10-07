@@ -13,5 +13,18 @@ function loadDashboard() {
     }
 }
 
+function initMap() {
+    const entregadorPos = { lat: -23.550520, lng: -46.633308 }; // Exemplo de coordenadas
+    const map = new google.maps.Map(document.getElementById('map-container'), {
+        zoom: 12,
+        center: entregadorPos,
+    });
+    const marker = new google.maps.Marker({
+        position: entregadorPos,
+        map: map,
+        title: "Entregador",
+    });
+}
+
 window.onload = loadDashboard; // Carrega o resumo ao abrir a página
 

@@ -15,13 +15,13 @@ function renderOrders() {
         orderItem.classList.add('order-item');
         orderItem.innerHTML = `
             <h3>${item.name}</h3>
-            <span>Preço: R$ ${item.price.toFixed(2)}</span>
+            <p>Preço: R$ ${item.price.toFixed(2)}</p>
         `;
         ordersList.appendChild(orderItem);
     });
 
     const total = cart.reduce((sum, item) => sum + item.price, 0);
-    ordersList.innerHTML += `<h3>Total: R$ ${total.toFixed(2)}</h3>`;
+    ordersList.innerHTML += `<h3>Total: <span> R$ ${total.toFixed(2)} </span></h3>`;
 }
 
 function submitOrder() {
@@ -45,4 +45,27 @@ function submitOrder() {
     renderOrders();
 }
 
+function loadOrders() {
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    let orderList = document.getElementById('order-list');
+    orderList.innerHTML = ''; // Limpa a lista anterior
+
+    if (orders.length === 0) {
+        orderList.innerHTML = '<p>Nenhum pedido ainda!</p>';
+    } else {
+        orders.forEach((order, index) => {
+            let orderItem = document.createElement('div');
+            orderItem.className = 'order-item';
+            orderItem.innerHTML = `<p>${order.item} - <span> R$ ${order.price.toFixed(2)}</span> </p>`;
+            orderList.appendChild(orderItem);
+        });
+    }
+}
+
+function finalizeOrder() {
+    alert("Pedido finalizado com sucesso!");
+    localStorage.removeItem('orders');
+    loadOrders(); // Recarrega a lista para lim
+}
 window.onload = renderOrders;
+window.onload = loadOrders;

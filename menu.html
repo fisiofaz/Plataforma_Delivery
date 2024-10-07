@@ -13,9 +13,19 @@
         <button onclick="window.location.href='orders.html'" class="cart-button">Ver Carrinho</button>    
     </header>
     <main class="menu">              
-        <section id="menuList">
-            <!-- A lista de itens do cardápio será gerada aqui -->
-        </section>
+        <div class="menu-item">
+            <h3>Pizza Margherita</h3>
+            <p>Deliciosa pizza de queijo e manjericão</p>
+            <span>R$ 25,00</span>
+            <button onclick="addToCart('Pizza Margherita', 25)">Adicionar ao Pedido</button>
+        </div>
+        
+        <div class="menu-item">
+            <h3>Burguer Artesanal</h3>
+            <p>Hambúrguer artesanal com molho especial</p>
+            <span>R$ 30,00</span>
+            <button onclick="addToCart('Burguer Artesanal', 30)">Adicionar ao Pedido</button>
+        </div>
     </main>
 
     <script src="menu.js"></script>

@@ -1,23 +1,17 @@
-function renderDashboardSummary() {
-    const orders = JSON.parse(localStorage.getItem('orders')) || [];
-    const summaryContainer = document.getElementById('dashboardSummary');
-    summaryContainer.innerHTML = '';
-
+function loadDashboard() {
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    let total = 0;
+    let orderSummary = document.getElementById('order-summary');
+    
     if (orders.length === 0) {
-        summaryContainer.innerHTML = '<p>Nenhum pedido foi recebido ainda.</p>';
-        return;
+        orderSummary.innerHTML = '<p>Nenhuma venda registrada ainda.</p>';
+    } else {
+        orders.forEach(order => {
+            total += order.price;
+        });
+        orderSummary.innerHTML = `<p>Total de vendas: R$ ${total.toFixed(2)}</p>`;
     }
-
-    orders.forEach(order => {
-        const summaryItem = document.createElement('div');
-        summaryItem.classList.add('summary-item');
-        summaryItem.innerHTML = `
-            <h3>Pedido #${order.id}</h3>
-            <p>Total: R$ ${order.total.toFixed(2)}</p>
-            <p>Status: <span> ${order.status} </span></p>
-        `;
-        summaryContainer.appendChild(summaryItem);
-    });
 }
 
-window.onload = renderDashboardSummary;
+window.onload = loadDashboard; // Carrega o resumo ao abrir a página
+

@@ -22,13 +22,10 @@ function renderMenu() {
     });
 }
 
-function addToCart(itemId) {
-    const item = menu.find(menuItem => menuItem.id === itemId);
-    if (item) {
-        cart.push(item);
-        alert(`${item.name} foi adicionado ao pedido!`);
-    }
-    localStorage.setItem('cart', JSON.stringify(cart)); 
+function addToCart(item, price) {
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    orders.push({ item, price });
+    localStorage.setItem('orders', JSON.stringify(orders));
+    alert(`${item} adicionado ao pedido!`);
 }
-
 window.onload = renderMenu;

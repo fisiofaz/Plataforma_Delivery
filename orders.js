@@ -1,4 +1,6 @@
 let orders = [];
+let orderStatus = ['Recebido', 'Em Preparação', 'A Caminho', 'Entregue'];
+let currentStatusIndex = 0;
 
 function renderOrders() {
     const ordersList = document.getElementById('ordersList');
@@ -62,10 +64,27 @@ function loadOrders() {
     }
 }
 
+function changeOrderStatus() {
+    currentStatusIndex = (currentStatusIndex + 1) % orderStatus.length;
+    notifyCustomer(orderStatus[currentStatusIndex]);
+    loadOrders();
+}
+
 function finalizeOrder() {
     alert("Pedido finalizado com sucesso!");
     localStorage.removeItem('orders');
     loadOrders(); // Recarrega a lista para lim
 }
-window.onload = renderOrders;
+
+function notifyCustomer(status) {
+    let notificationArea = document.getElementById('notification-area');
+    let notificationMessage = document.getElementById('notification-message');
+    notificationMessage.innerText = `Seu pedido agora está: ${status}`;
+
+    notificationArea.style.display = 'block';
+    setTimeout(() => {
+        notificationArea.style.display = 'none';
+    }, 3000); // Exibe a notificação por 3 segundos
+}
+
 window.onload = loadOrders;

@@ -17,12 +17,14 @@
 
     <section class="orders">
         <div id="order-list"></div>
-        <button class="submit-button" onclick="finalizeOrder()">Finalizar Pedido</button>
+        <button class="submit-button" onclick="changeOrderStatus()">Atualizar Status do Pedido</button>
     </section>
+
     <section id="notification-area" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #10b981; color: white; padding: 1rem; border-radius: 5px;">
         <p id="notification-message"></p>
     </section>
-
+    <audio id="notification-sound" src="notification.mp3"></audio> <!-- Substitua pelo caminho correto do som -->
+    
     <script src="orders.js"></script>
 </body>
 </html>

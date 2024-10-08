@@ -26,5 +26,43 @@ function initMap() {
     });
 }
 
+function fetchOrders() {
+    fetch('/api/pedidos')
+        .then(response => response.json())
+        .then(data => {
+            // Atualizar o dashboard com novos pedidos e status
+            document.getElementById('order-list').innerHTML = '';
+            data.forEach(order => {
+                const orderHtml = `<div class="order-card">
+                    <h4>Pedido #${order.id}</h4>
+                    <p><strong>Status:</strong> ${order.status}</p>
+                    <button class="track-btn" onclick="trackDelivery(${order.id})">Rastrear Entrega</button>
+                    <div id="map-container-${order.id}"></div>
+                </div>`;
+                document.getElementById('order-list').innerHTML += orderHtml;
+            });
+        });
+}
+
+// Chamando a função repetidamente para atualização em tempo real
+setInterval(fetchOrders, 5000);
+
+function trackDelivery(orderId) {
+    fetch(`/api/rastreamento/${orderId}`)
+        .then(response => response.json())
+        .then(data => {
+            const mapContainer = document.getElementById(`map-container-${orderId}`);
+            const map = new google.maps.Map(mapContainer, {
+                zoom: 12,
+                center: { lat: data.latitude, lng: data.longitude },
+            });
+            const marker = new google.maps.Marker({
+                position: { lat: data.latitude, lng: data.longitude },
+                map: map,
+                title: 'Entregador',
+            });
+        });
+}
+
 window.onload = loadDashboard; // Carrega o resumo ao abrir a página
 

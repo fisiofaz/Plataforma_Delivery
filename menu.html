@@ -8,23 +8,34 @@
 </head>
 <body>
     <header>
-        <h1>Cardápio do Restaurante</h1>   
+        <h1 class="header">Cardápio do Restaurante</h1>   
         <button onclick="window.location.href='dashboard.html'" class="cart-button">Volar para o Dashboard</button>
         <button onclick="window.location.href='orders.html'" class="cart-button">Ver Carrinho</button>    
     </header>
-    <main class="menu">              
-        <div class="menu-item">
-            <h3>Pizza Margherita</h3>
-            <p>Deliciosa pizza de queijo e manjericão</p>
-            <span>R$ 25,00</span>
-            <button onclick="addToCart('Pizza Margherita', 25)">Adicionar ao Pedido</button>
-        </div>
-        
-        <div class="menu-item">
-            <h3>Burguer Artesanal</h3>
-            <p>Hambúrguer artesanal com molho especial</p>
-            <span>R$ 30,00</span>
-            <button onclick="addToCart('Burguer Artesanal', 30)">Adicionar ao Pedido</button>
+    <main class="menu">   
+        <div class="container">
+            <h1>Nosso Menu</h1>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="pizza.jpg" alt="Pizza">
+                    <div class="menu-item-details">
+                        <h3>Pizza Margherita</h3>
+                        <p>Molho de tomate, mozzarella, manjericão fresco.</p>
+                        <p class="price">R$ 30,00</p>
+                        <button>Adicionar ao Pedido</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="burger.jpg" alt="Hamburger">
+                    <div class="menu-item-details">
+                        <h3>Hamburger Clássico</h3>
+                        <p>Carne de 150g, queijo cheddar, alface e tomate.</p>
+                        <p class="price">R$ 25,00</p>
+                        <button>Adicionar ao Pedido</button>
+                    </div>
+                </div>
+                <!-- Adicione mais itens conforme necessário -->
+            </div>
         </div>
     </main>
 

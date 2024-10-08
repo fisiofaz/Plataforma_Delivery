@@ -28,4 +28,20 @@ function addToCart(item, price) {
     localStorage.setItem('orders', JSON.stringify(orders));
     alert(`${item} adicionado ao pedido!`);
 }
+
+document.getElementById('order-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    fetch('/api/pedidos', {
+        method: 'POST',
+        body: formData
+    }).then(response => {
+        if (response.ok) {
+            alert('Pedido enviado com sucesso!');
+        } else {
+            alert('Erro ao enviar o pedido.');
+        }
+    });
+});
 window.onload = renderMenu;

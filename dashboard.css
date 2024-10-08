@@ -208,3 +208,26 @@ table td {
     border: 1px solid #ddd;
     border-radius: 8px;
 }
+
+filters {
+    margin-bottom: 20px;
+}
+
+.filters h3 {
+    margin-bottom: 10px;
+}
+
+.filters select, .filters button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tracking {
+    margin-bottom: 40px;
+}
+
+.charts {
+    margin-bottom: 40px;
+}

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Gráficos Chart.js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script> <!-- Google Maps -->
     <title>Dashboard - Plataforma de Gestão de Delivery</title>
+    
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -40,42 +43,63 @@
                     </div>
                 </div>
             </section>
-
-            <section id="orders">
-                 <h2>Resumo do Restaurante</h2>
-                <button onclick="window.location.href='menu.html'" class="nav-button">Voltar ao Menu</button>
-                
-                <section class="dashboard">
-                   
-                    <div id="order-summary"></div>
-                </section>
-            </section>
-
-            <section class="order-status">
-                <h3>Pedidos em Andamento</h3>
-                <div class="order-list">
-                    <!-- Para cada pedido -->
-                    <div class="order-card">
-                        <h4>Pedido #001</h4>
-                        <p><strong>Cliente:</strong> João Silva</p>
-                        <p><strong>Status:</strong> A Caminho</p>
-                        <p><strong>Estimativa de Entrega:</strong> 20 min</p>
-                        <button class="track-btn">Rastrear Entregador</button>
-                        <!-- Mapa em tempo real -->
-                        <div id="map-container"></div>
-                    </div>
-                </div>
-            </section>
-           
             
-            <section id="reports">
-                <h2>Relatórios de Vendas</h2>
-                <div class="report-chart">
-                    <!-- Placeholder para o gráfico de vendas -->
-                    <canvas id="salesChart"></canvas>
-                </div>
+            <section class="order-table">
+                <h3>Pedidos Recentes</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body">
+                        <tr>
+                            <td>001</td>
+                            <td>João Silva</td>
+                            <td>Em Preparo</td>
+                            <td><button onclick="updateStatus('001')">Atualizar Status</button></td>
+                        </tr>
+                        <!-- Mais pedidos podem ser adicionados aqui -->
+                    </tbody>
+                </table>
             </section>
 
+            <section class="filters">
+                <h3>Filtros</h3>
+                <label for="status">Filtrar por Status:</label>
+                <select id="status">
+                    <option value="all">Todos</option>
+                    <option value="preparing">Em Preparo</option>
+                    <option value="on-the-way">A Caminho</option>
+                    <option value="delivered">Entregue</option>
+                </select>
+    
+                <label for="time-period">Período:</label>
+                <select id="time-period">
+                    <option value="today">Hoje</option>
+                    <option value="week">Esta Semana</option>
+                    <option value="month">Este Mês</option>
+                </select>
+                <button onclick="applyFilters()">Aplicar Filtros</button>
+            </section>
+    
+            <!-- Rastreamento -->
+            <section class="tracking">
+                <h3>Rastreamento em Tempo Real</h3>
+                <div id="map" style="height: 400px;"></div>
+            </section>
+    
+            <!-- Gráficos e Tabelas -->
+            <section class="charts">
+                <h3>Desempenho de Pedidos</h3>
+                <canvas id="ordersChart"></canvas> <!-- Gráfico de Desempenho -->
+            </section>
+
+  
+           
             <section id="promotions">
                 <h2>Promoções & Cupons</h2>
                 <button class="add-promotion">Adicionar Promoção</button>
